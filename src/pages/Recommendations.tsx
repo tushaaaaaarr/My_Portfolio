@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import './Recommendations.css';}
+import './Recommendations.css';
 import chrisProfilePic from '../images/chris.jpg'; // Adjust the path based on your directory structure
 import chariProPic from '../images/chris.jpg'; // Adjust the path based on your directory structure
 import sayanProfilePic from '../images/chris.jpg'; // Adjust the path based on your directory structure

@@ -1,19 +1,14 @@
 // queries/getWorkPermit.ts
-import datoCMSClient from './datoCMSClient';
 import { WorkPermit } from '../types';
 
-const GET_WORK_PERMIT = `
-  query {
-    workPermit {
-      visaStatus
-      expiryDate
-      summary
-      additionalInfo
-    }
-  }
-`;
+// Hardcoded work permit data - no need for DatoCMS
+const workPermitData: WorkPermit = {
+  visaStatus: 'Skilled Worker Visa (Tier 2)',
+  expiryDate: new Date('2026-12-31'),
+  summary: '',
+  additionalInfo: 'Currently authorized to work in the India with full employment rights.'
+};
 
 export async function getWorkPermit(): Promise<WorkPermit> {
-  const data = await datoCMSClient.request<{ workPermit: WorkPermit }>(GET_WORK_PERMIT);
-  return data.workPermit;
+  return workPermitData;
 }

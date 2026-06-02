@@ -1,6 +1,6 @@
 import React from 'react';
 import './Blogs.css';
-import { FaMedium, FaDev } from 'react-icons/fa';
+import { FaMedium } from 'react-icons/fa';
 
 const blogs = [
   {

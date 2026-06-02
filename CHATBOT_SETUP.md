@@ -29,9 +29,10 @@ This installs all new dependencies including:
 ### Step 2: Verify .env File
 Make sure your `.env` file has the Groq API key:
 ```
-GROQ_API_KEY=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
-REACT_APP_GROQ_API_KEY=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
+GROQ_API_KEY=your-groq-api-key-here
+REACT_APP_GROQ_API_KEY=your-groq-api-key-here
 ```
+**Note:** Never commit actual API keys to GitHub. Get your key from [console.groq.com](https://console.groq.com)
 
 ### Step 3: Run Both Server and App
 

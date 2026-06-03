@@ -6,17 +6,5 @@
     "api/**/*.ts": {
       "runtime": "@vercel/node@4.0.0"
     }
-  },
-  "routes": [
-    {
-      "src": "/api/.*",
-      "dest": "/api/$1",
-      "methods": ["GET", "POST", "OPTIONS"]
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "status": 200
-    }
-  ]
+  }
 }

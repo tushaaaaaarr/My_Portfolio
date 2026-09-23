@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatBot.css';
-import { FaTimes, FaPaperPlane, FaExpand, FaCompress } from 'react-icons/fa';
+import { FaTimes, FaPaperPlane, FaExpand, FaCompress, FaPlus } from 'react-icons/fa';
 import { SiGooglegemini } from 'react-icons/si';
 
 interface Message {
@@ -89,6 +89,19 @@ const ChatBot: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const createFreshChat = () => {
+    setMessages([
+      {
+        id: '1',
+        text: "I am Jarvis, Tushar's AI Assistant. I am here to provide you with precise, professional information about Tushar's skills, experience, and accomplishments. How may I assist you today?",
+        sender: 'bot',
+        timestamp: new Date(),
+      },
+    ]);
+    setInputValue('');
+    setIsLoading(false);
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -191,6 +204,13 @@ const ChatBot: React.FC = () => {
               <span>Chat with Jarvis</span>
             </div>
             <div className="chatbot-header-actions">
+              <button
+                className="chatbot-new-chat"
+                onClick={createFreshChat}
+                title="New chat"
+              >
+                <FaPlus size={16} />
+              </button>
               <button
                 className="chatbot-fullscreen"
                 onClick={() => setIsFullscreen(!isFullscreen)}

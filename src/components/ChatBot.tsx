@@ -10,6 +10,71 @@ interface Message {
   timestamp: Date;
 }
 
+const formatInlineText = (text: string): React.ReactNode[] => {
+  const segments = text.split(/(\*\*[^*]+\*\*|_[^_]+_|`[^`]+`)/g).filter(Boolean);
+
+  return segments.map((segment, index) => {
+    if (segment.startsWith('**') && segment.endsWith('**')) {
+      return <strong key={`${segment}-${index}`}>{segment.slice(2, -2)}</strong>;
+    }
+
+    if (segment.startsWith('_') && segment.endsWith('_')) {
+      return <em key={`${segment}-${index}`}>{segment.slice(1, -1)}</em>;
+    }
+
+    if (segment.startsWith('`') && segment.endsWith('`')) {
+      return <code key={`${segment}-${index}`}>{segment.slice(1, -1)}</code>;
+    }
+
+    return <React.Fragment key={`${segment}-${index}`}>{segment}</React.Fragment>;
+  });
+};
+
+const formatMessageContent = (text: string): React.ReactNode => {
+  const normalized = text.replace(/\r\n/g, '\n').trim();
+  if (!normalized) {
+    return null;
+  }
+
+  const blocks = normalized.split(/\n\s*\n/);
+
+  return blocks.map((block, blockIndex) => {
+    const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+
+    if (lines.length === 0) {
+      return null;
+    }
+
+    if (lines.every((line) => line.startsWith('- ') || line.startsWith('* '))) {
+      return (
+        <ul key={`block-${blockIndex}`}>
+          {lines.map((line, lineIndex) => (
+            <li key={`${blockIndex}-${lineIndex}`}>{formatInlineText(line.replace(/^[-*]\s*/, ''))}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    if (lines.length === 1 && /^#{1,3}\s+/.test(lines[0])) {
+      const level = lines[0].match(/^#+/)?.[0].length || 1;
+      const content = lines[0].replace(/^#{1,3}\s+/, '');
+      const HeadingTag = `h${Math.min(level, 3)}` as keyof JSX.IntrinsicElements;
+      return <HeadingTag key={`block-${blockIndex}`}>{formatInlineText(content)}</HeadingTag>;
+    }
+
+    return (
+      <p key={`block-${blockIndex}`}>
+        {lines.map((line, lineIndex) => (
+          <React.Fragment key={`${blockIndex}-${lineIndex}`}>
+            {lineIndex > 0 && <br />}
+            {formatInlineText(line)}
+          </React.Fragment>
+        ))}
+      </p>
+    );
+  });
+};
+
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -149,7 +214,7 @@ const ChatBot: React.FC = () => {
                 key={message.id}
                 className={`message message-${message.sender}`}
               >
-                <div className="message-content">{message.text}</div>
+                <div className="message-content">{formatMessageContent(message.text)}</div>
               </div>
             ))}
             {isLoading && (

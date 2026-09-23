@@ -4,13 +4,14 @@ import { Skill } from '../types';
 // Hardcoded skills data - no need for DatoCMS
 const skillsData: Skill[] = [
   // AI & GenAI
-  { name: 'LLMs', category: 'AI & GenAI', description: 'Large Language Models including GPT-4, Claude, and open-source alternatives', icon: 'FaPython' },
-  { name: 'Prompt Engineering', category: 'AI & GenAI', description: 'Designing and optimizing prompts for effective LLM applications', icon: 'SiTypescript' },
+  { name: 'LLMs', category: 'AI & GenAI', description: 'Large Language Models and orchestration of production-grade GenAI workflows', icon: 'FaPython' },
+  { name: 'Prompt Engineering', category: 'AI & GenAI', description: 'Designing and optimizing prompts for effectiveness, reliability, and evaluation', icon: 'SiTypescript' },
   { name: 'RAG', category: 'AI & GenAI', description: 'Retrieval-Augmented Generation for knowledge-grounded AI systems', icon: 'FaDatabase' },
-  { name: 'Vector Embeddings', category: 'AI & GenAI', description: 'Creating and managing semantic embeddings with pgvector', icon: 'FaDatabase' },
-  { name: 'ChromaDB', category: 'AI & GenAI', description: 'Vector database for similarity search and semantic retrieval', icon: 'SiPostgresql' },
-  { name: 'Azure OpenAI', category: 'AI & GenAI', description: 'Deploying managed Azure OpenAI models', icon: 'FaMicrosoft' },
-  { name: 'AWS Bedrock', category: 'AI & GenAI', description: 'Accessing foundational models on AWS', icon: 'FaAws' },
+  { name: 'Self-Healing RAG', category: 'AI & GenAI', description: 'Autonomous prompt and retrieval improvement with validation and rollback workflows', icon: 'FaDatabase' },
+  { name: 'Vector Embeddings', category: 'AI & GenAI', description: 'Creating and managing semantic embeddings with pgvector and ChromaDB', icon: 'FaDatabase' },
+  { name: 'ChromaDB', category: 'AI & GenAI', description: 'Vector database for semantic search and retrieval', icon: 'SiPostgresql' },
+  { name: 'Azure OpenAI', category: 'AI & GenAI', description: 'Deploying managed Azure OpenAI models for intelligent applications', icon: 'FaMicrosoft' },
+  { name: 'AWS Bedrock', category: 'AI & GenAI', description: 'Accessing foundational models on AWS for enterprise AI workflows', icon: 'FaAws' },
 
   // Languages
   { name: 'Python', category: 'Languages', description: 'Primary language for AI/ML and backend development', icon: 'FaPython' },
@@ -20,11 +21,14 @@ const skillsData: Skill[] = [
 
   // Frameworks
   { name: 'FastAPI', category: 'Frameworks', description: 'High-performance REST API framework for Python microservices', icon: 'FaPython' },
-  { name: 'React', category: 'Frameworks', description: 'Frontend UI development with component-based architecture', icon: 'FaReact' },
+  { name: 'React.js', category: 'Frameworks', description: 'Modern frontend UI development with component-based architecture', icon: 'FaReact' },
+  { name: 'Angular', category: 'Frameworks', description: 'Structured frontend development for agentic and enterprise interfaces', icon: 'FaAngular' },
   { name: 'Flask', category: 'Frameworks', description: 'Lightweight Python web framework', icon: 'FaPython' },
   { name: 'LangChain', category: 'Frameworks', description: 'Framework for building LLM-powered applications', icon: 'SiTypescript' },
   { name: 'LangGraph', category: 'Frameworks', description: 'Agent orchestration framework with state machines', icon: 'SiTypescript' },
   { name: 'LangSmith', category: 'Frameworks', description: 'LLM debugging and evaluation platform', icon: 'FaDatabase' },
+  { name: 'CopilotKit', category: 'Frameworks', description: 'Building AI-assisted interactive user experiences', icon: 'SiTypescript' },
+  { name: 'AG-UI', category: 'Frameworks', description: 'Agentic UI orchestration for streaming AI experiences', icon: 'SiTypescript' },
 
   // Cloud & DevOps
   { name: 'Azure AKS', category: 'Cloud & DevOps', description: 'Kubernetes container orchestration on Azure', icon: 'FaMicrosoft' },
@@ -35,11 +39,13 @@ const skillsData: Skill[] = [
   { name: 'Terraform', category: 'Cloud & DevOps', description: 'Infrastructure as Code for cloud resources', icon: 'SiTerraform' },
   { name: 'CI/CD', category: 'Cloud & DevOps', description: 'Continuous Integration and Deployment pipelines', icon: 'FaGitlab' },
   { name: 'Linux', category: 'Cloud & DevOps', description: 'Unix-like OS administration and scripting', icon: 'FaLinux' },
+  { name: 'Azure DevOps', category: 'Cloud & DevOps', description: 'Release pipelines, boards, and engineering workflows on Azure', icon: 'FaMicrosoft' },
 
   // Databases
   { name: 'PostgreSQL', category: 'Databases', description: 'Relational database with pgvector extension', icon: 'SiPostgresql' },
   { name: 'MySQL', category: 'Databases', description: 'Relational database management system', icon: 'SiMysql' },
   { name: 'MongoDB', category: 'Databases', description: 'NoSQL document database', icon: 'SiMongodb' },
+  { name: 'pgvector', category: 'Databases', description: 'Vector storage and similarity search in PostgreSQL', icon: 'SiPostgresql' },
 
   // Core Concepts
   { name: 'System Design', category: 'Core Concepts', description: 'Designing scalable distributed systems', icon: 'FaProjectDiagram' },

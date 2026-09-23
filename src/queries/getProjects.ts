@@ -10,21 +10,21 @@ import jarvisai from '../images/jarvis ai.png';
 // Hardcoded projects data - no need for DatoCMS
 const projectsData: Project[] = [
   {
-    title: 'AI Meeting Notes – Action Tracker Platform with Self-Healing RAG',
+    title: 'AI Meeting Notes – Action Tracker | FastAPI, LangGraph, React.js, PostgreSQL, ChromaDB, Groq',
     description:
-      'AI-powered meeting intelligence platform that converts transcripts into summaries, action items, and searchable insights. Features include multi-agent LangGraph workflow, self-healing RAG with grounding validation, semantic search with vector embeddings, TTL caching, AI chat interface, and SaaS dashboard. Built with FastAPI, React.js, PostgreSQL, ChromaDB, and Groq LLMs for production-grade reliability.',
-    techUsed: 'React.js, Tailwind CSS, FastAPI, Python, LangGraph, LangChain, PostgreSQL, pgvector, ChromaDB, Groq',
+      'Architected a 4-agent LangGraph pipeline for transcription, summarization, action extraction, and semantic Q&A. Implemented Self-Healing RAG with pgvector + ChromaDB hybrid search and Groq streaming, achieving sub-2s transcription-to-summary latency for 60-minute meetings.',
+    techUsed: 'FastAPI, LangGraph, React.js, PostgreSQL, ChromaDB, Groq, pgvector',
     image: {
-      url: meetingnotes, // Placeholder image - replace with actual project image
+      url: meetingnotes,
     },
   },
   {
-    title: 'Multi-Agent AI Workflow Builder – No-Code Orchestration Studio',
+    title: 'Multi-Agent AI Workflow Builder | React.js, FastAPI, LangGraph, MongoDB, Docker',
     description:
-      'Enterprise no-code platform for composing multi-agent AI workflows via drag-and-drop. Features 5 configurable AI personas, graph-based execution engine with dependency management, real-time WebSocket streaming, MongoDB persistence, workflow versioning, and visual dashboard with monitoring. Abstracts LangGraph complexity while maintaining production-grade reliability and scalability.',
-    techUsed: 'React.js, TypeScript, Tailwind CSS, FastAPI, Python, LangGraph, LangChain, MongoDB, WebSocket, Docker',
+      'Built a no-code multi-agent orchestration studio with 5 configurable AI personas, a graph-based execution engine, real-time WebSocket streaming, and MongoDB-backed persistence. This enables non-technical users to compose multi-agent pipelines via drag-and-drop while maintaining production-grade scalability and observability.',
+    techUsed: 'React.js, FastAPI, LangGraph, MongoDB, Docker, WebSocket, TypeScript',
     image: {
-      url: multiagent, // Placeholder image - replace with actual project image
+      url: multiagent,
     },
   },
   {
